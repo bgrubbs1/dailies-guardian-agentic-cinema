@@ -1,0 +1,161 @@
+# TYPE dailies_ingest_completed counter
+# HELP dailies_ingest_completed Deterministic synthetic dailies fixture series.
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 100 1786323600
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 100 1786323660
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 100 1786323720
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 100 1786323780
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 100 1786323840
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 100 1786323900
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 100 1786323960
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 100 1786324020
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 100 1786324080
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 100 1786324140
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 101 1786324200
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 102 1786324260
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 103 1786324320
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 104 1786324380
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 105 1786324440
+dailies_ingest_completed_total{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 106 1786324500
+# TYPE dailies_ingest_queue_depth gauge
+# HELP dailies_ingest_queue_depth Deterministic synthetic dailies fixture series.
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 4 1786327200
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 5 1786327260
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 6 1786327320
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327380
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 10 1786327440
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 12 1786327500
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 15 1786327560
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 18 1786327620
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 21 1786327680
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 24 1786327740
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 26 1786327800
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 28 1786327860
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 29 1786327920
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 30 1786327980
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 31 1786328040
+dailies_ingest_queue_depth{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 31 1786328100
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 3 1786323600
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 3 1786323660
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 4 1786323720
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 5 1786323780
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 6 1786323840
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 8 1786323900
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 10 1786323960
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 12 1786324020
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 14 1786324080
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 15 1786324140
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 16 1786324200
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 17 1786324260
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 18 1786324320
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 18 1786324380
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 18 1786324440
+dailies_ingest_queue_depth{environment="synthetic",production="ORBITAL_DAY_7",stage="ingest"} 18 1786324500
+# TYPE dailies_review_package_age_minutes gauge
+# HELP dailies_review_package_age_minutes Deterministic synthetic dailies fixture series.
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 8 1786330800
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 9 1786330860
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 10 1786330920
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 11 1786330980
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 12 1786331040
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 4 1786331100
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 5 1786331160
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 6 1786331220
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 7 1786331280
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 8 1786331340
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 9 1786331400
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 10 1786331460
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 11 1786331520
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 12 1786331580
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 5 1786331640
+dailies_review_package_age_minutes{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 6 1786331700
+# TYPE dailies_review_publish_success counter
+# HELP dailies_review_publish_success Deterministic synthetic dailies fixture series.
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 40 1786330800
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 40 1786330860
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 40 1786330920
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 40 1786330980
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 40 1786331040
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 41 1786331100
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 41 1786331160
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 41 1786331220
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 41 1786331280
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 41 1786331340
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 41 1786331400
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 41 1786331460
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 41 1786331520
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 41 1786331580
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 42 1786331640
+dailies_review_publish_success_total{environment="synthetic",production="PAPER_MOON_TRAILER",stage="review"} 42 1786331700
+# TYPE dailies_transcode_active_workers gauge
+# HELP dailies_transcode_active_workers Deterministic synthetic dailies fixture series.
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 4 1786327200
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 5 1786327260
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 6 1786327320
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 7 1786327380
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327440
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327500
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327560
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327620
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327680
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327740
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327800
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327860
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327920
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327980
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786328040
+dailies_transcode_active_workers{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786328100
+# TYPE dailies_transcode_duration_seconds gauge
+# HELP dailies_transcode_duration_seconds Deterministic synthetic dailies fixture series.
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 95 1786327200
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 100 1786327260
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 108 1786327320
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 118 1786327380
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 130 1786327440
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 145 1786327500
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 160 1786327560
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 180 1786327620
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 205 1786327680
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 230 1786327740
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 250 1786327800
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 270 1786327860
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 285 1786327920
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 298 1786327980
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 305 1786328040
+dailies_transcode_duration_seconds{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode",stat="p95"} 310 1786328100
+# TYPE dailies_transcode_retry counter
+# HELP dailies_transcode_retry Deterministic synthetic dailies fixture series.
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 20 1786327200
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 20 1786327260
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 20 1786327320
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 20 1786327380
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 20 1786327440
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 20 1786327500
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 20 1786327560
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 21 1786327620
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 21 1786327680
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 22 1786327740
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 22 1786327800
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 23 1786327860
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 23 1786327920
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 23 1786327980
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 23 1786328040
+dailies_transcode_retry_total{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 23 1786328100
+# TYPE dailies_transcode_worker_limit gauge
+# HELP dailies_transcode_worker_limit Deterministic synthetic dailies fixture series.
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327200
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327260
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327320
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327380
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327440
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327500
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327560
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327620
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327680
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327740
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327800
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327860
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327920
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786327980
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786328040
+dailies_transcode_worker_limit{environment="synthetic",production="HARBOR_LIGHT_EP2",stage="transcode"} 8 1786328100
+# EOF

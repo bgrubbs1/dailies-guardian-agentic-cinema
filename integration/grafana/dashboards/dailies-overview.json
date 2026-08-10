@@ -1,0 +1,159 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "description": "Synthetic-only evidence windows for Dailies Guardian. No real production or personal data.",
+  "editable": false,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "synthetic-loki"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": true,
+        "showTime": true,
+        "sortOrder": "Ascending",
+        "wrapLogMessage": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "synthetic-loki"
+          },
+          "direction": "forward",
+          "editorMode": "code",
+          "expr": "{environment=\"synthetic\", production=\"ORBITAL_DAY_7\"}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Ingest validation retries - ORBITAL_DAY_7",
+      "type": "logs"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "synthetic-loki"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "id": 2,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": true,
+        "showTime": true,
+        "sortOrder": "Ascending",
+        "wrapLogMessage": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "synthetic-loki"
+          },
+          "direction": "forward",
+          "editorMode": "code",
+          "expr": "{environment=\"synthetic\", production=\"HARBOR_LIGHT_EP2\"}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Transcode timeout retries - HARBOR_LIGHT_EP2",
+      "type": "logs"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "synthetic-loki"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "id": 3,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": true,
+        "showTime": true,
+        "sortOrder": "Ascending",
+        "wrapLogMessage": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "synthetic-loki"
+          },
+          "direction": "forward",
+          "editorMode": "code",
+          "expr": "{environment=\"synthetic\", production=\"PAPER_MOON_TRAILER\"}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Out-of-window stale status - PAPER_MOON_TRAILER",
+      "type": "logs"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 41,
+  "tags": [
+    "dailies-guardian",
+    "synthetic-only",
+    "evidence-first"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-2h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "utc",
+  "title": "Synthetic Dailies Overview",
+  "uid": "dailies-overview",
+  "version": 1,
+  "weekStart": ""
+}

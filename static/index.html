@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dailies Guardian</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --bg: #070b12;
+        --surface: #0d1420;
+        --surface-strong: #111b2a;
+        --border: #26364d;
+        --border-active: #62e6bd;
+        --text: #eef4ff;
+        --muted: #9caec5;
+        --accent: #62e6bd;
+        --accent-ink: #062017;
+        --warning: #f5c978;
+        --radius: 15px;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--text); }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(circle at 14% 0%, rgb(58 119 122 / 16%), transparent 34rem),
+          linear-gradient(90deg, transparent 0 49.95%, rgb(255 255 255 / 2%) 50%, transparent 50.05%);
+      }
+      main { position: relative; width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 42px 0 36px; }
+      header { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-bottom: 26px; border-bottom: 1px solid var(--border); }
+      .brand { display: flex; align-items: center; gap: 13px; }
+      .mark { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #3c9f82; color: var(--accent); font-weight: 800; letter-spacing: -.05em; }
+      .brand-name { font-size: .86rem; font-weight: 720; letter-spacing: .11em; text-transform: uppercase; }
+      .mode { color: var(--muted); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+      .intro { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 48px; align-items: end; padding: 54px 0 42px; }
+      h1 { max-width: 680px; margin: 0; font-size: clamp(3.4rem, 8vw, 6.6rem); line-height: .88; letter-spacing: -.065em; }
+      .sub { max-width: 500px; margin: 0 0 4px; color: #adbed2; font-size: 1.05rem; line-height: 1.65; }
+      .workspace { display: grid; grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr); gap: 22px; align-items: start; }
+      .panel { border: 1px solid var(--border); background: rgb(13 20 32 / 88%); border-radius: var(--radius); }
+      .panel-heading { padding: 22px 22px 18px; border-bottom: 1px solid var(--border); }
+      .panel-heading h2 { margin: 0; font-size: 1.02rem; letter-spacing: -.01em; }
+      .panel-heading p { margin: 8px 0 0; color: var(--muted); font-size: .88rem; line-height: 1.5; }
+      #case-list { display: grid; }
+      .case { width: 100%; padding: 19px 22px; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; background: transparent; color: inherit; text-align: left; font: inherit; cursor: pointer; transition: background 160ms ease, box-shadow 160ms ease; }
+      .case:last-child { border-bottom: 0; border-radius: 0 0 var(--radius) var(--radius); }
+      .case:hover { background: rgb(98 230 189 / 5%); }
+      .case:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+      .case.selected { background: rgb(98 230 189 / 8%); box-shadow: inset 3px 0 var(--accent); }
+      .case-head { display: flex; justify-content: space-between; gap: 14px; align-items: baseline; }
+      .case-title { font-weight: 730; }
+      .outcome { flex: none; color: var(--accent); font-size: .68rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+      .outcome.abstain { color: var(--warning); }
+      .case-production { margin-top: 7px; color: #b9cae0; font: 600 .75rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; }
+      .case-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; color: var(--muted); font-size: .76rem; line-height: 1.45; }
+      form { padding: 22px; }
+      label { display: block; margin: 0 0 8px; color: #c4d3e6; font-size: .78rem; font-weight: 700; letter-spacing: .055em; text-transform: uppercase; }
+      label:not(:first-child) { margin-top: 20px; }
+      select, textarea, button { width: 100%; border-radius: 10px; font: inherit; }
+      select, textarea { border: 1px solid #35465f; background: #080d15; color: var(--text); padding: 13px 14px; }
+      select:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+      textarea { min-height: 132px; resize: vertical; line-height: 1.5; }
+      #submit { margin-top: 18px; border: 0; padding: 13px 16px; background: var(--accent); color: var(--accent-ink); font-weight: 790; cursor: pointer; }
+      #submit:hover { background: #83efd0; }
+      #submit:disabled { opacity: .58; cursor: wait; }
+      .form-note { margin: 13px 0 0; color: var(--muted); font-size: .76rem; line-height: 1.45; }
+      #result { display: none; margin: 22px 0 0; border: 1px solid var(--border); border-radius: var(--radius); background: #09101a; padding: 24px; white-space: pre-wrap; color: #dbe8f8; font: .88rem/1.65 ui-monospace, SFMono-Regular, Consolas, monospace; overflow-wrap: anywhere; }
+      .boundary { display: flex; justify-content: space-between; gap: 18px; margin: 22px 0 0; color: #7f91a9; font-size: .76rem; line-height: 1.5; }
+      .boundary strong { color: #a9bdd5; font-weight: 650; }
+      @media (min-width: 821px) and (max-height: 800px) {
+        main { padding-top: 22px; }
+        header { padding-bottom: 18px; }
+        .intro { gap: 38px; padding: 28px 0 24px; }
+        h1 { font-size: clamp(3rem, 6.3vw, 5.2rem); }
+        .sub { font-size: .95rem; line-height: 1.55; }
+        .panel-heading { padding: 16px 20px 14px; }
+        .panel-heading p { margin-top: 5px; }
+        .case { padding: 14px 20px; }
+        .case-meta { margin-top: 6px; }
+        form { padding: 16px 20px; }
+        label:not(:first-child) { margin-top: 14px; }
+        textarea { min-height: 94px; }
+        #submit { margin-top: 14px; }
+        .form-note { margin-top: 9px; }
+      }
+      @media (max-width: 820px) {
+        main { width: min(100% - 24px, 680px); padding-top: 24px; }
+        header { align-items: flex-start; }
+        .mode { max-width: 170px; text-align: right; line-height: 1.5; }
+        .intro { grid-template-columns: 1fr; gap: 24px; padding: 40px 0 32px; }
+        h1 { font-size: clamp(3.2rem, 16vw, 5.2rem); }
+        .workspace { grid-template-columns: 1fr; }
+        .boundary { display: block; }
+        .boundary span { display: block; }
+        .boundary span + span { margin-top: 8px; }
+      }
+      @media (prefers-reduced-motion: reduce) { .case { transition: none; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="brand"><div class="mark" aria-hidden="true">DG</div><div class="brand-name">Dailies Guardian</div></div>
+        <div class="mode">Gemini + Google ADK + Grafana MCP</div>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <h1 id="page-title">Evidence before action.</h1>
+        <p class="sub">Read-only incident triage for the synthetic pipelines that move camera media into tomorrow's review. Every displayed fact must trace to a successful Grafana query and exact UTC window.</p>
+      </section>
+
+      <div class="workspace">
+        <section class="panel" aria-labelledby="suite-title">
+          <div class="panel-heading">
+            <h2 id="suite-title">Verified incident suite</h2>
+            <p>Choose a deterministic case. One is intentionally inconclusive to test whether the agent abstains.</p>
+          </div>
+          <div id="case-list" aria-live="polite"><div class="case-meta" style="padding: 22px">Loading synthetic cases…</div></div>
+        </section>
+
+        <section class="panel" aria-labelledby="analysis-title">
+          <div class="panel-heading">
+            <h2 id="analysis-title">Build an evidence brief</h2>
+            <p>Loading a case fills the request only. The button still requires the real Gemini and read-only Grafana MCP path.</p>
+          </div>
+          <form id="incident-form">
+            <label for="production">Fictional production</label>
+            <select id="production" name="production"></select>
+            <label for="question">Incident question</label>
+            <textarea id="question" name="question" maxlength="800">Why is the synthetic editorial review package late, and what should the on-call operator check first?</textarea>
+            <button id="submit" type="submit">Query evidence and build brief</button>
+            <p class="form-note">No canned answer is displayed. Unsupported, failed, or mismatched evidence is rejected before the brief reaches this screen.</p>
+          </form>
+        </section>
+      </div>
+
+      <pre id="result" aria-live="polite" aria-atomic="true"></pre>
+      <p class="boundary"><span><strong>Read only.</strong> Observe, summarize, recommend, escalate.</span><span>Fictional productions and synthetic telemetry only. No real studio, customer, employer, household, or personal data.</span></p>
+    </main>
+
+    <script>
+      const form = document.querySelector('#incident-form');
+      const result = document.querySelector('#result');
+      const submit = document.querySelector('#submit');
+      const production = document.querySelector('#production');
+      const question = document.querySelector('#question');
+      const caseList = document.querySelector('#case-list');
+      const caseTitles = {
+        INGEST_BACKLOG: 'Ingest backlog',
+        TRANSCODE_SATURATION: 'Transcode saturation',
+        AMBIGUOUS_REVIEW_DELAY: 'Ambiguous review delay'
+      };
+
+      function formatWindow(windowValue) {
+        const from = new Date(windowValue.from);
+        const to = new Date(windowValue.to);
+        const formatter = new Intl.DateTimeFormat('en-US', {hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'UTC'});
+        return `${formatter.format(from)}–${formatter.format(to)} UTC`;
+      }
+
+      function selectCase(caseValue, button, shouldFocus = true) {
+        production.value = caseValue.production_id;
+        question.value = caseValue.question;
+        document.querySelectorAll('.case').forEach((item) => item.classList.remove('selected'));
+        button.classList.add('selected');
+        if (shouldFocus) question.focus({preventScroll: true});
+      }
+
+      function countLabel(value, singular, plural = `${singular}s`) {
+        return `${value} ${value === 1 ? singular : plural}`;
+      }
+
+      function renderCases(catalog) {
+        caseList.replaceChildren();
+        production.replaceChildren();
+        catalog.cases.forEach((caseValue, index) => {
+          const option = document.createElement('option');
+          option.value = caseValue.production_id;
+          option.textContent = caseValue.production_id;
+          production.append(option);
+
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'case';
+          button.setAttribute('aria-label', `Load ${caseTitles[caseValue.id] || caseValue.id}`);
+
+          const head = document.createElement('span');
+          head.className = 'case-head';
+          const title = document.createElement('span');
+          title.className = 'case-title';
+          title.textContent = caseTitles[caseValue.id] || caseValue.id;
+          const outcome = document.createElement('span');
+          outcome.className = caseValue.expected_outcome === 'abstain_or_inconclusive' ? 'outcome abstain' : 'outcome';
+          outcome.textContent = caseValue.expected_outcome === 'abstain_or_inconclusive' ? 'Must abstain' : 'Supported hypothesis';
+          head.append(title, outcome);
+
+          const productionName = document.createElement('span');
+          productionName.className = 'case-production';
+          productionName.textContent = caseValue.production_id;
+
+          const meta = document.createElement('span');
+          meta.className = 'case-meta';
+          const counts = caseValue.evidence_counts;
+          meta.textContent = `${formatWindow(caseValue.window)} · ${countLabel(counts.metrics, 'metric series', 'metric series')} · ${countLabel(counts.logs, 'log')} · ${countLabel(counts.alerts, 'alert')}`;
+
+          button.append(head, productionName, meta);
+          button.addEventListener('click', () => selectCase(caseValue, button));
+          caseList.append(button);
+          if (index === 0) selectCase(caseValue, button, false);
+        });
+      }
+
+      async function loadCatalog() {
+        try {
+          const response = await fetch('/api/fixture-cases');
+          const payload = await response.json();
+          if (!response.ok) throw new Error(payload.detail || 'Fixture catalog unavailable');
+          renderCases(payload);
+        } catch (error) {
+          caseList.textContent = `Unable to load the synthetic incident suite: ${error.message}`;
+        }
+      }
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        submit.disabled = true;
+        form.setAttribute('aria-busy', 'true');
+        result.style.display = 'block';
+        result.textContent = 'Querying read-only Grafana evidence…';
+        try {
+          const response = await fetch('/api/analyze', {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({production_id: production.value, question: question.value})
+          });
+          const payload = await response.json();
+          if (!response.ok) throw new Error(payload.detail || 'Analysis failed');
+          result.textContent = payload.brief;
+        } catch (error) {
+          result.textContent = `Unable to build brief: ${error.message}`;
+        } finally {
+          submit.disabled = false;
+          form.removeAttribute('aria-busy');
+        }
+      });
+
+      loadCatalog();
+    </script>
+  </body>
+</html>

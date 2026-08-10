@@ -1,0 +1,285 @@
+{
+  "schema_version": "1.0",
+  "artifact": "dailies-guardian-public-repository-candidate",
+  "manifest_scope": "Every candidate file except RELEASE_MANIFEST.json itself.",
+  "generated_by": "python scripts/build_public_release.py",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 117,
+      "sha256": "279effaf9ecdfe7e269bc84ee309eed2b3b91f243aeb9ef9436fb0cfb546f0ab"
+    },
+    {
+      "path": ".env.example",
+      "bytes": 482,
+      "sha256": "0dec7bb207c2dac09c09ba5aa9810ececdaf5fcdd9a1c20146eea1134117f146"
+    },
+    {
+      "path": ".github/workflows/public-release.yml",
+      "bytes": 4713,
+      "sha256": "b58ca97febf4ca1c63c5f807a4fbd4301aae3c2b6123cb62504e84130181c156"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 104,
+      "sha256": "dfadb097d171632adc46bcf6ef6b7f0dada9f5dd968f62d652adf5068ffb7087"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 1112,
+      "sha256": "ae3db375e93d9a60c773a260a39a1972990593b6d8b8cb001496eb1251e3d9e3"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "bdb95c0835bcedea9742ec41754b5b3f5d780a9bd5dd126ef3e0c6dcf8c9d3d8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6336,
+      "sha256": "1c3aa3da1169ca8c689dfb14ae42cbcdd8c81b2e91a436564e15a229fe641f59"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1890,
+      "sha256": "756ed89689827757d5caa10c38c0c7df26a7627a2279b3a1d611cdc103e568f4"
+    },
+    {
+      "path": "artifacts/public/artifact_manifest_v1.json",
+      "bytes": 510,
+      "sha256": "f233e920a5fcd2de7361b6704510df0e07b0172194a0fc674fc6e1004425b7a2"
+    },
+    {
+      "path": "artifacts/public/case_index_v1.json",
+      "bytes": 1288,
+      "sha256": "588d4a6eedac59e7063ec65e3c4679e2d97e3db6271104c1bef539ea38f7e273"
+    },
+    {
+      "path": "artifacts/public/loki_push_v1.json",
+      "bytes": 1462,
+      "sha256": "00777ce9929c7179aa780d1dde72b9923e61c8c1e455e9073fd3861ad050e982"
+    },
+    {
+      "path": "artifacts/public/telemetry_v1.openmetrics",
+      "bytes": 18073,
+      "sha256": "870410085cbdb154d73245f6d0a34f9648a2410bb8a57f11bfca832fe17fe3e0"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 1808,
+      "sha256": "ee07a81ebc2f2e67e8703eb6dbe0f17e760af088753d32cacbe8c498363101a0"
+    },
+    {
+      "path": "docs/CONTEST_REQUIREMENTS.md",
+      "bytes": 2327,
+      "sha256": "aff8e4b147227ce6c9183c3226e2b6a5a97dd2e3b07f31c92e526d55328b3008"
+    },
+    {
+      "path": "docs/PRIVACY.md",
+      "bytes": 1904,
+      "sha256": "7a06732c599a8c9d15ffe860e02a6c893cc9ac25715c34c7c42edb351506ff3a"
+    },
+    {
+      "path": "docs/PUBLIC_RELEASE.md",
+      "bytes": 2094,
+      "sha256": "7c6eff978682aaa8c435a1ed983daaa48f554c70b4e5e98a7886ec0b82018ec6"
+    },
+    {
+      "path": "docs/RUBRIC_PLAN.md",
+      "bytes": 1458,
+      "sha256": "c18f873c5cb139acddcf29ce1402ad5674bb0dcb76d16089d451cd9f171b2c01"
+    },
+    {
+      "path": "docs/TELEMETRY_EVALUATION.md",
+      "bytes": 3651,
+      "sha256": "ea7d120a524a34130bad7457e103b87ff8f974a8bd1ad39477672689f5ae4674"
+    },
+    {
+      "path": "docs/assets/dailies-guardian-dashboard.png",
+      "bytes": 198086,
+      "sha256": "89dc535f482bb311cb076f0aa9123ac03e38ec51ddac9b2499e29835588d180e"
+    },
+    {
+      "path": "fixtures/README.md",
+      "bytes": 1207,
+      "sha256": "50f9c27f125db15a24bf28a133f0602a607532a1a2934909a44e42ac7ae5c8b9"
+    },
+    {
+      "path": "fixtures/telemetry_v1.json",
+      "bytes": 9816,
+      "sha256": "4de528753faed8f595753d817e037d4b55608fc6480a684baf69ff1188492fe6"
+    },
+    {
+      "path": "integration/grafana/dashboards/dailies-overview.json",
+      "bytes": 3667,
+      "sha256": "8b976dbcab15fbe98c3ed2f7fb8629f1521ee40fb51fea6242dd38f583470672"
+    },
+    {
+      "path": "integration/grafana/provisioning/dashboards/dashboards.yaml",
+      "bytes": 305,
+      "sha256": "762dadf2bea1022268b55e3401bee5651e67ee1488d49cf5eba36f3b4ed7f959"
+    },
+    {
+      "path": "integration/grafana/provisioning/datasources/datasources.yaml",
+      "bytes": 233,
+      "sha256": "5c92a6d27b2a6c76034d3c991f2faf0c02a83bdede242a6081d571a9e738f89f"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 646,
+      "sha256": "0d7d29b3e0751ebadfe660be06d4648ea1d59689b5458a504438f439267dfe04"
+    },
+    {
+      "path": "requirements.lock",
+      "bytes": 1336,
+      "sha256": "8bbb99214f8b53d9f5b9cba7a15ed4a899d07e1289b9cb982fb82f0d76df756f"
+    },
+    {
+      "path": "scripts/build_public_release.py",
+      "bytes": 1077,
+      "sha256": "bfc9e0d99a404cc038bc08eb184f6d2e0678e9c7d25db4fc923d5e35a40b53b5"
+    },
+    {
+      "path": "scripts/export_fixture.py",
+      "bytes": 1731,
+      "sha256": "a1ac5261f1668d560add16b773d0c94cc7f3d78e8d094bd29d0271072cbf861c"
+    },
+    {
+      "path": "scripts/inspect_mcp_tools.py",
+      "bytes": 1352,
+      "sha256": "2e07e074df00863377ac2c65198738a0ab3de25c6ab51063a40ef23ee924fd7d"
+    },
+    {
+      "path": "scripts/list_mcp_tools.py",
+      "bytes": 1116,
+      "sha256": "5f1ccecf91e88582d07cb5c3943de5121f77acaaa674abda629433394d948eba"
+    },
+    {
+      "path": "scripts/smoke_grafana_mcp.ps1",
+      "bytes": 7515,
+      "sha256": "f14d76c4ded0f3f439fdde8f960d0af9e0c7ae6c780df20ad436faff487a16d9"
+    },
+    {
+      "path": "scripts/smoke_grafana_mcp.py",
+      "bytes": 4151,
+      "sha256": "628837f8999f97b18495d3839df3f07e8fde17017a4c15f65a3caf0fb9ee59d8"
+    },
+    {
+      "path": "scripts/smoke_loki.ps1",
+      "bytes": 3834,
+      "sha256": "a0fed3b3c77fab063917998a4d50e94ecee5bc89da6895a96f8638c1bff1e0bd"
+    },
+    {
+      "path": "src/dailies_guardian/__init__.py",
+      "bytes": 93,
+      "sha256": "ffeb53d9c3e07075e36e9d5e52141289e8f99dfe51f628a589abec861cb1f829"
+    },
+    {
+      "path": "src/dailies_guardian/agent.py",
+      "bytes": 1571,
+      "sha256": "178ad1c3439bf7b529c49d7faa7823f31b8529984008df44d299638ff79fc221"
+    },
+    {
+      "path": "src/dailies_guardian/config.py",
+      "bytes": 1757,
+      "sha256": "cd34ba9cdd1cfd9a2058cca509f53da454ce752c51215d7362c226c709d66ec4"
+    },
+    {
+      "path": "src/dailies_guardian/evaluation.py",
+      "bytes": 4582,
+      "sha256": "0dba7b28bee705bc939e21f6e036c7d92d0d9317f83b0c6cfd89dc3892314d8d"
+    },
+    {
+      "path": "src/dailies_guardian/export.py",
+      "bytes": 6510,
+      "sha256": "cd25fed1ed2775f9978c22925d9e88fb569a9bd35d130e1605e0cf05eb10b566"
+    },
+    {
+      "path": "src/dailies_guardian/fixture.py",
+      "bytes": 7214,
+      "sha256": "df1d4559d4c3728d62d7d6210da6e353f0906a82ad0debd99bbb9ea286e34807"
+    },
+    {
+      "path": "src/dailies_guardian/policy.py",
+      "bytes": 8577,
+      "sha256": "d7e97ca4567f40e51df0cd9eb5c80cdf92fde9aa17d0048ef421779ad6bed145"
+    },
+    {
+      "path": "src/dailies_guardian/release.py",
+      "bytes": 5124,
+      "sha256": "8fdceb5da9e810cd01390a29fe5d3bc6db2881b514acf84d1084cd2b77af18f9"
+    },
+    {
+      "path": "src/dailies_guardian/service.py",
+      "bytes": 7874,
+      "sha256": "4457e1cd9bff655eb2be864ac5c6a47cdaebee75873c2d33cc14775d6109f860"
+    },
+    {
+      "path": "static/index.html",
+      "bytes": 14052,
+      "sha256": "84640979ed139757d867d1c78344f0a858da18badc9363433a909c6764b6a0ea"
+    },
+    {
+      "path": "tests/test_agent.py",
+      "bytes": 1310,
+      "sha256": "54f8a34c889b1e337da19024d23142a827ff83797135f5542ae5d7cd6f74ae8c"
+    },
+    {
+      "path": "tests/test_evaluation.py",
+      "bytes": 4316,
+      "sha256": "81561995744b424680e131297cfd1c82a7aed75c849066aa1e31f61c4f72016f"
+    },
+    {
+      "path": "tests/test_export.py",
+      "bytes": 7236,
+      "sha256": "c20722a7b17c2d19723cef091b931459d9e8b53fee670d02900a4ed94a09f5fd"
+    },
+    {
+      "path": "tests/test_fixture.py",
+      "bytes": 3854,
+      "sha256": "d978ca20de10f63f2f96f00bede8457ab37e1c08792ef148f9c70862b5c4b10b"
+    },
+    {
+      "path": "tests/test_integration_assets.py",
+      "bytes": 3762,
+      "sha256": "7db47af624ead0e1be07f8726129b0a91ba0989bec815a8878f1f63d90f76e18"
+    },
+    {
+      "path": "tests/test_policy.py",
+      "bytes": 6260,
+      "sha256": "027a69ce6ce3d6247995702e1101abdf15e799bf6d32ed16846b7ccbdf812281"
+    },
+    {
+      "path": "tests/test_privacy.py",
+      "bytes": 1867,
+      "sha256": "3346f73d1d31471da38be05e90a65ecec7dd843303685f94740a98f0e157871f"
+    },
+    {
+      "path": "tests/test_release.py",
+      "bytes": 8352,
+      "sha256": "dc4833834086207d2b91a793dbc3b70b6c6b21f2c4c7874270af0c5cbc4b8ec0"
+    },
+    {
+      "path": "tests/test_service.py",
+      "bytes": 9353,
+      "sha256": "6e3aa8d578b947d779fe7e11500408f45ce3c53a4b0162aebff3cf4546a6acfe"
+    }
+  ],
+  "internal_only_paths_excluded": [
+    "docs/DEMO_STORYBOARD.md",
+    "docs/DEVPOST_SUBMISSION_DRAFT.md",
+    "docs/RUBRIC_AUDIT_DRAFT.md"
+  ],
+  "never_public_parts": [
+    ".git",
+    ".pytest_cache",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+    "private"
+  ],
+  "never_public_suffixes": [
+    ".egg-info"
+  ]
+}

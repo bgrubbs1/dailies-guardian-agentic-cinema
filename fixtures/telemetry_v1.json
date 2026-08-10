@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "fixture_id": "dailies-guardian-synthetic-v1",
+  "generated_at": "2026-08-10T00:00:00Z",
+  "datasources": [
+    {"uid": "synthetic-prom", "type": "prometheus"},
+    {"uid": "synthetic-loki", "type": "loki"}
+  ],
+  "dashboards": [
+    {"uid": "dailies-overview", "title": "Synthetic Dailies Overview"}
+  ],
+  "cases": [
+    {
+      "id": "INGEST_BACKLOG",
+      "production_id": "ORBITAL_DAY_7",
+      "window": {"from": "2026-08-10T01:00:00Z", "to": "2026-08-10T01:15:00Z"},
+      "question": "Why is the synthetic editorial package late?",
+      "expected_outcome": "supported_hypothesis",
+      "expected_owner": "Synthetic ingest on-call",
+      "expected_action": "Inspect the synthetic ingest validation and retry dashboard slice; make no mutation.",
+      "metrics": [
+        {
+          "name": "dailies_ingest_queue_depth",
+          "unit": "items",
+          "labels": {"production": "ORBITAL_DAY_7", "stage": "ingest", "environment": "synthetic"},
+          "samples": [["2026-08-10T01:00:00Z",3],["2026-08-10T01:01:00Z",3],["2026-08-10T01:02:00Z",4],["2026-08-10T01:03:00Z",5],["2026-08-10T01:04:00Z",6],["2026-08-10T01:05:00Z",8],["2026-08-10T01:06:00Z",10],["2026-08-10T01:07:00Z",12],["2026-08-10T01:08:00Z",14],["2026-08-10T01:09:00Z",15],["2026-08-10T01:10:00Z",16],["2026-08-10T01:11:00Z",17],["2026-08-10T01:12:00Z",18],["2026-08-10T01:13:00Z",18],["2026-08-10T01:14:00Z",18],["2026-08-10T01:15:00Z",18]]
+        },
+        {
+          "name": "dailies_ingest_completed_total",
+          "unit": "items",
+          "labels": {"production": "ORBITAL_DAY_7", "stage": "ingest", "environment": "synthetic"},
+          "samples": [["2026-08-10T01:00:00Z",100],["2026-08-10T01:01:00Z",100],["2026-08-10T01:02:00Z",100],["2026-08-10T01:03:00Z",100],["2026-08-10T01:04:00Z",100],["2026-08-10T01:05:00Z",100],["2026-08-10T01:06:00Z",100],["2026-08-10T01:07:00Z",100],["2026-08-10T01:08:00Z",100],["2026-08-10T01:09:00Z",100],["2026-08-10T01:10:00Z",101],["2026-08-10T01:11:00Z",102],["2026-08-10T01:12:00Z",103],["2026-08-10T01:13:00Z",104],["2026-08-10T01:14:00Z",105],["2026-08-10T01:15:00Z",106]]
+        }
+      ],
+      "logs": [
+        {"ts":"2026-08-10T01:06:00Z","labels":{"production":"ORBITAL_DAY_7","stage":"ingest","component":"validator","environment":"synthetic"},"level":"WARN","event":"checksum_retry","message":"Synthetic media segment retried after checksum validation."},
+        {"ts":"2026-08-10T01:08:00Z","labels":{"production":"ORBITAL_DAY_7","stage":"ingest","component":"validator","environment":"synthetic"},"level":"WARN","event":"checksum_retry","message":"Synthetic media segment retried after checksum validation."},
+        {"ts":"2026-08-10T01:10:00Z","labels":{"production":"ORBITAL_DAY_7","stage":"ingest","component":"validator","environment":"synthetic"},"level":"WARN","event":"checksum_retry","message":"Synthetic media segment retried after checksum validation."}
+      ],
+      "alerts": [{"name":"SyntheticIngestBacklog","state":"firing","starts_at":"2026-08-10T01:09:00Z"}]
+    },
+    {
+      "id": "TRANSCODE_SATURATION",
+      "production_id": "HARBOR_LIGHT_EP2",
+      "window": {"from": "2026-08-10T02:00:00Z", "to": "2026-08-10T02:15:00Z"},
+      "question": "What evidence explains the synthetic transcode delay?",
+      "expected_outcome": "supported_hypothesis",
+      "expected_owner": "Synthetic transcode on-call",
+      "expected_action": "Investigate one synthetic worker class and its configuration; make no mutation.",
+      "metrics": [
+        {
+          "name":"dailies_ingest_queue_depth","unit":"items","labels":{"production":"HARBOR_LIGHT_EP2","stage":"transcode","environment":"synthetic"},
+          "samples":[["2026-08-10T02:00:00Z",4],["2026-08-10T02:01:00Z",5],["2026-08-10T02:02:00Z",6],["2026-08-10T02:03:00Z",8],["2026-08-10T02:04:00Z",10],["2026-08-10T02:05:00Z",12],["2026-08-10T02:06:00Z",15],["2026-08-10T02:07:00Z",18],["2026-08-10T02:08:00Z",21],["2026-08-10T02:09:00Z",24],["2026-08-10T02:10:00Z",26],["2026-08-10T02:11:00Z",28],["2026-08-10T02:12:00Z",29],["2026-08-10T02:13:00Z",30],["2026-08-10T02:14:00Z",31],["2026-08-10T02:15:00Z",31]]
+        },
+        {
+          "name":"dailies_transcode_active_workers","unit":"workers","labels":{"production":"HARBOR_LIGHT_EP2","stage":"transcode","environment":"synthetic"},
+          "samples":[["2026-08-10T02:00:00Z",4],["2026-08-10T02:01:00Z",5],["2026-08-10T02:02:00Z",6],["2026-08-10T02:03:00Z",7],["2026-08-10T02:04:00Z",8],["2026-08-10T02:05:00Z",8],["2026-08-10T02:06:00Z",8],["2026-08-10T02:07:00Z",8],["2026-08-10T02:08:00Z",8],["2026-08-10T02:09:00Z",8],["2026-08-10T02:10:00Z",8],["2026-08-10T02:11:00Z",8],["2026-08-10T02:12:00Z",8],["2026-08-10T02:13:00Z",8],["2026-08-10T02:14:00Z",8],["2026-08-10T02:15:00Z",8]]
+        },
+        {
+          "name":"dailies_transcode_worker_limit","unit":"workers","labels":{"production":"HARBOR_LIGHT_EP2","stage":"transcode","environment":"synthetic"},
+          "samples":[["2026-08-10T02:00:00Z",8],["2026-08-10T02:01:00Z",8],["2026-08-10T02:02:00Z",8],["2026-08-10T02:03:00Z",8],["2026-08-10T02:04:00Z",8],["2026-08-10T02:05:00Z",8],["2026-08-10T02:06:00Z",8],["2026-08-10T02:07:00Z",8],["2026-08-10T02:08:00Z",8],["2026-08-10T02:09:00Z",8],["2026-08-10T02:10:00Z",8],["2026-08-10T02:11:00Z",8],["2026-08-10T02:12:00Z",8],["2026-08-10T02:13:00Z",8],["2026-08-10T02:14:00Z",8],["2026-08-10T02:15:00Z",8]]
+        },
+        {
+          "name":"dailies_transcode_duration_seconds","unit":"seconds","labels":{"production":"HARBOR_LIGHT_EP2","stage":"transcode","environment":"synthetic","stat":"p95"},
+          "samples":[["2026-08-10T02:00:00Z",95],["2026-08-10T02:01:00Z",100],["2026-08-10T02:02:00Z",108],["2026-08-10T02:03:00Z",118],["2026-08-10T02:04:00Z",130],["2026-08-10T02:05:00Z",145],["2026-08-10T02:06:00Z",160],["2026-08-10T02:07:00Z",180],["2026-08-10T02:08:00Z",205],["2026-08-10T02:09:00Z",230],["2026-08-10T02:10:00Z",250],["2026-08-10T02:11:00Z",270],["2026-08-10T02:12:00Z",285],["2026-08-10T02:13:00Z",298],["2026-08-10T02:14:00Z",305],["2026-08-10T02:15:00Z",310]]
+        },
+        {
+          "name":"dailies_transcode_retry_total","unit":"retries","labels":{"production":"HARBOR_LIGHT_EP2","stage":"transcode","environment":"synthetic"},
+          "samples":[["2026-08-10T02:00:00Z",20],["2026-08-10T02:01:00Z",20],["2026-08-10T02:02:00Z",20],["2026-08-10T02:03:00Z",20],["2026-08-10T02:04:00Z",20],["2026-08-10T02:05:00Z",20],["2026-08-10T02:06:00Z",20],["2026-08-10T02:07:00Z",21],["2026-08-10T02:08:00Z",21],["2026-08-10T02:09:00Z",22],["2026-08-10T02:10:00Z",22],["2026-08-10T02:11:00Z",23],["2026-08-10T02:12:00Z",23],["2026-08-10T02:13:00Z",23],["2026-08-10T02:14:00Z",23],["2026-08-10T02:15:00Z",23]]
+        }
+      ],
+      "logs":[
+        {"ts":"2026-08-10T02:07:00Z","labels":{"production":"HARBOR_LIGHT_EP2","stage":"transcode","component":"worker","environment":"synthetic"},"level":"WARN","event":"codec_timeout_retry","message":"Synthetic codec task timed out and was queued for retry."},
+        {"ts":"2026-08-10T02:09:00Z","labels":{"production":"HARBOR_LIGHT_EP2","stage":"transcode","component":"worker","environment":"synthetic"},"level":"WARN","event":"codec_timeout_retry","message":"Synthetic codec task timed out and was queued for retry."},
+        {"ts":"2026-08-10T02:11:00Z","labels":{"production":"HARBOR_LIGHT_EP2","stage":"transcode","component":"worker","environment":"synthetic"},"level":"WARN","event":"codec_timeout_retry","message":"Synthetic codec task timed out and was queued for retry."}
+      ],
+      "alerts":[{"name":"SyntheticTranscodeSaturation","state":"firing","starts_at":"2026-08-10T02:10:00Z"}]
+    },
+    {
+      "id":"AMBIGUOUS_REVIEW_DELAY",
+      "production_id":"PAPER_MOON_TRAILER",
+      "window":{"from":"2026-08-10T03:00:00Z","to":"2026-08-10T03:15:00Z"},
+      "question":"Is there evidence that the synthetic review package is late?",
+      "expected_outcome":"abstain_or_inconclusive",
+      "expected_owner":"Synthetic editorial coordinator",
+      "expected_action":"Request a narrower current publish-status query before reaching a conclusion.",
+      "metrics":[
+        {
+          "name":"dailies_review_package_age_minutes","unit":"minutes","labels":{"production":"PAPER_MOON_TRAILER","stage":"review","environment":"synthetic"},
+          "samples":[["2026-08-10T03:00:00Z",8],["2026-08-10T03:01:00Z",9],["2026-08-10T03:02:00Z",10],["2026-08-10T03:03:00Z",11],["2026-08-10T03:04:00Z",12],["2026-08-10T03:05:00Z",4],["2026-08-10T03:06:00Z",5],["2026-08-10T03:07:00Z",6],["2026-08-10T03:08:00Z",7],["2026-08-10T03:09:00Z",8],["2026-08-10T03:10:00Z",9],["2026-08-10T03:11:00Z",10],["2026-08-10T03:12:00Z",11],["2026-08-10T03:13:00Z",12],["2026-08-10T03:14:00Z",5],["2026-08-10T03:15:00Z",6]]
+        },
+        {
+          "name":"dailies_review_publish_success_total","unit":"packages","labels":{"production":"PAPER_MOON_TRAILER","stage":"review","environment":"synthetic"},
+          "samples":[["2026-08-10T03:00:00Z",40],["2026-08-10T03:01:00Z",40],["2026-08-10T03:02:00Z",40],["2026-08-10T03:03:00Z",40],["2026-08-10T03:04:00Z",40],["2026-08-10T03:05:00Z",41],["2026-08-10T03:06:00Z",41],["2026-08-10T03:07:00Z",41],["2026-08-10T03:08:00Z",41],["2026-08-10T03:09:00Z",41],["2026-08-10T03:10:00Z",41],["2026-08-10T03:11:00Z",41],["2026-08-10T03:12:00Z",41],["2026-08-10T03:13:00Z",41],["2026-08-10T03:14:00Z",42],["2026-08-10T03:15:00Z",42]]
+        }
+      ],
+      "logs":[
+        {"ts":"2026-08-10T02:45:00Z","labels":{"production":"PAPER_MOON_TRAILER","stage":"review","component":"publisher","environment":"synthetic"},"level":"WARN","event":"stale_status_snapshot","message":"Synthetic status snapshot predates the requested incident window."}
+      ],
+      "alerts":[]
+    }
+  ]
+}
