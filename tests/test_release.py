@@ -45,6 +45,10 @@ class PublicReleaseTests(unittest.TestCase):
                 "docs/ARCHITECTURE.md",
                 "docs/assets/dailies-guardian-dashboard.png",
                 "artifacts/public/artifact_manifest_v1.json",
+                "artifacts/public/evaluation_receipt_v1.json",
+                "scripts/export_evaluation_receipt.py",
+                "src/dailies_guardian/evaluation_receipt.py",
+                "tests/test_evaluation_receipt.py",
             ):
                 self.assertTrue((output / relative).is_file(), relative)
 

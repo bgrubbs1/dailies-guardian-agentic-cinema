@@ -36,8 +36,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6336,
-      "sha256": "1c3aa3da1169ca8c689dfb14ae42cbcdd8c81b2e91a436564e15a229fe641f59"
+      "bytes": 6778,
+      "sha256": "e63ab2ca6a322c069c76415ba9fd2ebc53955756fb5a474b1cf9e91b693b59d5"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -53,6 +53,11 @@
       "path": "artifacts/public/case_index_v1.json",
       "bytes": 1288,
       "sha256": "588d4a6eedac59e7063ec65e3c4679e2d97e3db6271104c1bef539ea38f7e273"
+    },
+    {
+      "path": "artifacts/public/evaluation_receipt_v1.json",
+      "bytes": 1609,
+      "sha256": "2e2cfd76caad66749bbdcdd0b92c0155fdbf97696b55eb8dcc126fd9da05f524"
     },
     {
       "path": "artifacts/public/loki_push_v1.json",
@@ -71,8 +76,8 @@
     },
     {
       "path": "docs/CONTEST_REQUIREMENTS.md",
-      "bytes": 2327,
-      "sha256": "aff8e4b147227ce6c9183c3226e2b6a5a97dd2e3b07f31c92e526d55328b3008"
+      "bytes": 2414,
+      "sha256": "f0a80332c99789b0a155f5d475309ce7247ceb9880d05a46e07f1f7dd6624ffc"
     },
     {
       "path": "docs/PRIVACY.md",
@@ -91,8 +96,8 @@
     },
     {
       "path": "docs/TELEMETRY_EVALUATION.md",
-      "bytes": 3651,
-      "sha256": "ea7d120a524a34130bad7457e103b87ff8f974a8bd1ad39477672689f5ae4674"
+      "bytes": 4295,
+      "sha256": "0999f169af36a4808a1194da42ee76761dc9e010b61233a703bc0dbb08880c19"
     },
     {
       "path": "docs/assets/dailies-guardian-dashboard.png",
@@ -138,6 +143,11 @@
       "path": "scripts/build_public_release.py",
       "bytes": 1077,
       "sha256": "bfc9e0d99a404cc038bc08eb184f6d2e0678e9c7d25db4fc923d5e35a40b53b5"
+    },
+    {
+      "path": "scripts/export_evaluation_receipt.py",
+      "bytes": 1084,
+      "sha256": "c159446146ba4268bb5fdbe10f65d545829b76b4606445b9afe06f181b750ce6"
     },
     {
       "path": "scripts/export_fixture.py",
@@ -190,6 +200,11 @@
       "sha256": "0dba7b28bee705bc939e21f6e036c7d92d0d9317f83b0c6cfd89dc3892314d8d"
     },
     {
+      "path": "src/dailies_guardian/evaluation_receipt.py",
+      "bytes": 5702,
+      "sha256": "77f4e02752e524126ab20a83b394dcf07724ddf6c507e0366da8947433deb1a6"
+    },
+    {
       "path": "src/dailies_guardian/export.py",
       "bytes": 6510,
       "sha256": "cd25fed1ed2775f9978c22925d9e88fb569a9bd35d130e1605e0cf05eb10b566"
@@ -230,6 +245,11 @@
       "sha256": "81561995744b424680e131297cfd1c82a7aed75c849066aa1e31f61c4f72016f"
     },
     {
+      "path": "tests/test_evaluation_receipt.py",
+      "bytes": 3744,
+      "sha256": "5362b99f41ab7acd4702240d3beb745dd70d7a9644c2b2f7e8fcd81e8bce9a0c"
+    },
+    {
       "path": "tests/test_export.py",
       "bytes": 7236,
       "sha256": "c20722a7b17c2d19723cef091b931459d9e8b53fee670d02900a4ed94a09f5fd"
@@ -256,8 +276,8 @@
     },
     {
       "path": "tests/test_release.py",
-      "bytes": 8352,
-      "sha256": "dc4833834086207d2b91a793dbc3b70b6c6b21f2c4c7874270af0c5cbc4b8ec0"
+      "bytes": 8585,
+      "sha256": "6315ad98d711f861f34077462d97303310580a0e829a08bc5f14e9aeda9f442c"
     },
     {
       "path": "tests/test_service.py",

@@ -29,14 +29,15 @@ runtime therefore imports Google ADK and Grafana MCP only.
 - Local contest-only scaffold: present.
 - Read-only Grafana MCP code path: present and verified against a disposable
   local Grafana/Loki stack; contest-cloud verification remains pending.
-- Policy/privacy/API evidence: forty-nine tests pass, including public-response
+- Policy/privacy/API evidence: sixty-four tests pass, including public-response
   rejection when citations, required sections, or privacy boundaries fail.
 - Reproducible container: passes build and local HTTP health/UI smoke test.
 - Google Cloud/Grafana accounts and private credentials: owner gate.
 - Synthetic Grafana telemetry and four real read-only MCP tool calls: verified
   locally with digest-pinned containers and an ephemeral Viewer token. Hosted
   contest URL and cloud call capture: pending.
-- Public repo/video/Devpost submission: pending.
+- Public repository and credential-free CI: verified. Live cloud evidence,
+  hosted URL, public video, and Devpost submission: pending.
 
 ## Results monitoring
 

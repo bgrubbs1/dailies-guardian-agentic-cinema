@@ -19,7 +19,10 @@ The generated `artifacts/public` directory contains:
   nanosecond epoch timestamps encoded as strings;
 - `case_index_v1.json`: case metadata without raw metric or log records; and
 - `artifact_manifest_v1.json`: the canonical fixture SHA-256 plus byte count
-  and SHA-256 for each generated seed artifact.
+  and SHA-256 for each generated seed artifact; and
+- `evaluation_receipt_v1.json`: the fixture-bound score, criterion breakdown,
+  exact citation window, canonical-brief SHA-256, and explicit decision for all
+  three synthetic cases, with no raw telemetry.
 
 Historical timestamps are intentional here: this is a reproducible incident
 fixture, not a live process exporter. The OpenMetrics specification permits
@@ -76,3 +79,15 @@ The scorer is an audit aid, not a claim that the language model will always
 produce a perfect answer. Contract violations and the ambiguous case's causal
 overclaim return an ineligible zero. Missing signals reduce the score even when
 the prose is polished.
+
+Generate the public evaluation receipt offline:
+
+```powershell
+python scripts/export_evaluation_receipt.py
+```
+
+The command reads only the checked-in fictional fixture, makes no network call,
+and reads no environment credentials. It refuses to emit a receipt if any
+canonical case is ineligible or scores below 90. The test suite also proves that
+an unobserved citation window fails closed and that repeated runs are byte
+identical.

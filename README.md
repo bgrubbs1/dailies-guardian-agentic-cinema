@@ -61,7 +61,12 @@ It is not a hosted-demo claim and does not depict a completed Gemini response.
   40 points, case-specific observed evidence 30, uncertainty calibration 20,
   and reversible action/escalation 10. Unsupported or causal answers cannot
   score like evidence-complete briefs.
-- Sixty policy, privacy, fixture, integration, export, evaluation, release,
+- `scripts/export_evaluation_receipt.py` produces a deterministic, credential-free
+  public receipt that binds all three canonical briefs to the fixture SHA-256,
+  exact observed query windows, score breakdowns, and explicit abstention for
+  the ambiguous case. A mismatched citation fails closed instead of producing a
+  passing receipt.
+- Sixty-four policy, privacy, fixture, integration, export, evaluation, release,
   API-contract, and
   configuration tests pass locally.
 - A credential-free GitHub Actions workflow rebuilds the exact allowlisted
@@ -72,8 +77,9 @@ It is not a hosted-demo claim and does not depict a completed Gemini response.
 - Desktop and 390-pixel mobile browser checks confirm all three fixture cases
   render, selecting the abstention case updates the form, the primary action is
   visible, and the UI clearly distinguishes case loading from real analysis.
-- A real Gemini/Google Cloud + Grafana Cloud run, hosted URL, public repository,
-  and demo video are **not yet claimed**.
+- The allowlisted public repository and credential-free CI are verified. A real
+  Gemini/Google Cloud + Grafana Cloud run, hosted URL, and demo video are **not
+  yet claimed**.
 
 ## Local checks
 
@@ -81,6 +87,7 @@ It is not a hosted-demo claim and does not depict a completed Gemini response.
 python -m unittest discover -s tests -v
 python -m compileall -q src tests fixtures
 python scripts/export_fixture.py
+python scripts/export_evaluation_receipt.py
 python scripts/build_public_release.py
 powershell -File scripts/smoke_loki.ps1
 powershell -File scripts/smoke_grafana_mcp.ps1
