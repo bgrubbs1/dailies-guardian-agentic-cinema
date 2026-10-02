@@ -2,6 +2,7 @@ name: Verify public release
 
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -15,18 +16,18 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 35
+    timeout-minutes: 15
 
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: pip
-          cache-dependency-path: requirements.lock
 
       - name: Install constrained runtime
         run: |
@@ -118,11 +119,3 @@ jobs:
       - name: Remove smoke container
         if: always()
         run: docker rm -f dailies-guardian-ci || true
-
-      - name: Upload manifest only
-        uses: actions/upload-artifact@v4
-        with:
-          name: public-release-manifest
-          path: ${{ runner.temp }}/public-repo/RELEASE_MANIFEST.json
-          if-no-files-found: error
-          retention-days: 7
