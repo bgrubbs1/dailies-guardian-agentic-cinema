@@ -33,6 +33,19 @@ timeout. It does not save a dependency cache or upload release artifacts; the
 manifest is verified within the temporary runner workspace. Checkout does not
 persist Git credentials.
 
+The candidate also includes `.github/workflows/codeql.yml` for security analysis
+of Python source and GitHub Actions workflows on pull requests targeting `main`
+and pushes to `main`. It runs only for a public repository, on one standard
+Ubuntu runner with a 15-minute timeout. It analyzes source without installing
+application dependencies or starting the application. The official actions are
+pinned to release commits; checkout does not persist credentials.
+
+CodeQL sends results to GitHub code scanning using the job's short-lived token
+with `contents: read` and `security-events: write`. It disables TRAP/dependency
+caches, database uploads, and debug artifacts, and refuses Actions debug runs.
+It has no schedule, manual trigger, external service secrets, or coding-agent
+step. Review and test any suggested security fix before applying it.
+
 The following internal files are deliberately omitted because they are review
 or handoff material, not application source or judge-facing instructions:
 
