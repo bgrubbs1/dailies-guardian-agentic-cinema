@@ -19,7 +19,7 @@ size and SHA-256 of every copied file. It refuses to overwrite or merge into an
 existing destination. This protects both user-owned files and the release from
 stale content.
 
-The candidate includes `.github/workflows/public-release.yml`. On every push,
+The candidate includes `.github/workflows/public-release.yml`. On a push to `main`,
 pull request, or manual dispatch, the workflow installs the constrained Python
 runtime, runs the complete test and compile checks, rebuilds the allowlisted
 candidate into a clean temporary directory, verifies every manifest hash and
@@ -27,6 +27,11 @@ exclusion, repeats the checks from that candidate, and builds and smoke-tests
 the container as its non-root user. The smoke test uses only explicit fictional
 placeholder configuration and exercises health, UI, and fixture-catalog reads;
 it never calls `/api/analyze` or any live cloud service.
+
+The job uses a standard public GitHub-hosted Ubuntu runner with a 15-minute
+timeout. It does not save a dependency cache or upload release artifacts; the
+manifest is verified within the temporary runner workspace. Checkout does not
+persist Git credentials.
 
 The following internal files are deliberately omitted because they are review
 or handoff material, not application source or judge-facing instructions:

@@ -16,8 +16,8 @@
     },
     {
       "path": ".github/workflows/public-release.yml",
-      "bytes": 4713,
-      "sha256": "b58ca97febf4ca1c63c5f807a4fbd4301aae3c2b6123cb62504e84130181c156"
+      "bytes": 4450,
+      "sha256": "05b125ff591e3831f133e27736dd959527b5794b7c4f329c6675accc2c0ae0de"
     },
     {
       "path": ".gitignore",
@@ -86,8 +86,8 @@
     },
     {
       "path": "docs/PUBLIC_RELEASE.md",
-      "bytes": 2094,
-      "sha256": "7c6eff978682aaa8c435a1ed983daaa48f554c70b4e5e98a7886ec0b82018ec6"
+      "bytes": 2358,
+      "sha256": "98d02b131bbe7938be01d3ea31a4ad30ace9b456db56384049a24daa55fa4775"
     },
     {
       "path": "docs/RUBRIC_PLAN.md",
