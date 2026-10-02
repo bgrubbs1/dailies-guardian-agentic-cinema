@@ -15,6 +15,11 @@
       "sha256": "0dec7bb207c2dac09c09ba5aa9810ececdaf5fcdd9a1c20146eea1134117f146"
     },
     {
+      "path": ".github/workflows/codeql.yml",
+      "bytes": 1466,
+      "sha256": "616d7c7be0433f7b369a96b8a46f322fe5a38ac5e1c9703778ce1f72e263e488"
+    },
+    {
       "path": ".github/workflows/public-release.yml",
       "bytes": 4450,
       "sha256": "05b125ff591e3831f133e27736dd959527b5794b7c4f329c6675accc2c0ae0de"
@@ -86,8 +91,8 @@
     },
     {
       "path": "docs/PUBLIC_RELEASE.md",
-      "bytes": 2358,
-      "sha256": "98d02b131bbe7938be01d3ea31a4ad30ace9b456db56384049a24daa55fa4775"
+      "bytes": 3205,
+      "sha256": "64036c3d1442d94a02de281792fd31c04a4eed37c12e041d9e67a53fc4f8e78d"
     },
     {
       "path": "docs/RUBRIC_PLAN.md",

@@ -1,0 +1,55 @@
+name: CodeQL public security analysis
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codeql-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    if: github.event.repository.visibility == 'public'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      security-events: write
+    env:
+      CODEQL_ACTION_DEBUG_COMBINED_SARIF: "false"
+
+    steps:
+      - name: Refuse debug artifact uploads
+        shell: bash
+        run: |
+          if [[ "${RUNNER_DEBUG:-0}" == "1" ]]; then
+            echo "::error::CodeQL debug runs are disabled to avoid retained debug artifacts."
+            exit 1
+          fi
+
+      - name: Check out public source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
+        with:
+          languages: actions, python
+          tools: linked
+          debug: false
+          trap-caching: false
+          dependency-caching: false
+
+      - name: Analyze public source and publish code-scanning results
+        uses: github/codeql-action/analyze@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
+        with:
+          upload: always
+          upload-database: false
+          wait-for-processing: true
